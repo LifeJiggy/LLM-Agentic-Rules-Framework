@@ -1,0 +1,32 @@
+system_name: example-ai-system
+owner: example-team
+purpose: "Describe the approved intended use."
+risk_tier: medium
+users:
+  - internal-users
+data_classes:
+  - internal
+  - customer-data
+models:
+  - provider: example-provider
+    model: example-model
+    version: pinned-version
+prompts:
+  repository: prompts/
+  review_required_for_high_risk_changes: true
+tools:
+  - name: example_tool
+    permission_level: read-only
+    human_approval_required: false
+retention:
+  prompts: 30 days
+  completions: 30 days
+  traces: 30 days
+reviews:
+  security: required
+  privacy: required
+  compliance: conditional
+monitoring:
+  policy_violations: enabled
+  latency: enabled
+  cost: enabled

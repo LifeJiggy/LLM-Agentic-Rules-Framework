@@ -1,0 +1,37 @@
+{
+  "name": "llm-agentic-rules-adapters",
+  "version": "1.0.0",
+  "description": "Portable adapter map for installing or referencing the LLM Agentic Rules Framework in coding agents and IDE assistants.",
+  "supportedTargets": [
+    "codex",
+    "claude-code",
+    "opencode",
+    "aider",
+    "gemini-cli",
+    "goose",
+    "cursor",
+    "windsurf",
+    "cline",
+    "roo-code",
+    "continue",
+    "zed",
+    "sourcegraph-cody",
+    "github-copilot",
+    "jetbrains-ai"
+  ],
+  "components": {
+    "skill": "skills/llm-agentic-rules/SKILL.md",
+    "commands": "commands/",
+    "agents": "agents/",
+    "docs": "docs/",
+    "templates": "assets/templates/"
+  },
+  "installer": {
+    "script": "scripts/install_agent_adapters.py",
+    "preview": "python scripts/install_agent_adapters.py --target all --dry-run",
+    "applyOne": "python scripts/install_agent_adapters.py --target claude-code --apply",
+    "listTargets": "python scripts/install_agent_adapters.py --list-targets",
+    "componentInstall": "python scripts/install_agent_adapters.py --target all --component skill --apply",
+    "stagedInstall": "python scripts/install_agent_adapters.py --target all --target-root ./adapter-preview --apply"
+  }
+}

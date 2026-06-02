@@ -1,0 +1,19 @@
+site_name: LLM & Agentic Rules Framework
+site_description: Production-grade rules framework for LLM and agentic systems.
+docs_dir: docs
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Domain Index: domain-index.md
+  - Domain Knowledge Map: domain-knowledge-map.md
+  - Glossary: glossary.md
+  - Risk Tiering: risk-tiering.md
+  - Adoption Playbook: adoption-playbook.md
+  - Agentic CLI Plugin Guide: agentic-cli-plugin-guide.md
+  - Checklist Packs: checklist-packs.md
+  - Framework Quality Standard: framework-quality-standard.md
+  - Evolution Process: evolution-process.md
+  - Advanced Usage: advanced-usage.md
+  - Migration Guide: migration-guide.md
+theme:
+  name: mkdocs

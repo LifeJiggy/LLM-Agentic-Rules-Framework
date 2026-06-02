@@ -1,0 +1,26 @@
+name: Validate Framework
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate framework structure
+        shell: pwsh
+        run: ./scripts/validate-framework.ps1
+
+      - name: Generate rule inventory
+        run: >
+          python scripts/check_rules.py
+          --summary
+          --validate-links
+          --json build/rule-report.json
+          --catalog build/rule-catalog.json
+          --coverage build/domain-coverage.md
+          --export-checklists build/checklists.md
