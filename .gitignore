@@ -50,3 +50,6 @@ ehthumbs.db
 
 # CI/CD
 .cache/
+
+# Others
+.build/

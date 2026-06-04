@@ -17,6 +17,9 @@ TARGETS = [
     "codex",
     "claude-code",
     "opencode",
+    "kilocode",
+    "kimi-code",
+    "hermes-agent",
     "aider",
     "gemini-cli",
     "goose",
@@ -73,6 +76,12 @@ def target_base(target: str, home: Path, target_root: Path | None = None) -> Pat
         return home / ".claude"
     if target == "opencode":
         return config / "opencode" / "llm-agentic-rules"
+    if target == "kilocode":
+        return config / "kilocode" / "llm-agentic-rules"
+    if target == "hermes-agent":
+        return config / "hermes-agent" / "llm-agentic-rules"
+    if target == "kimicode":
+        return config / "kimicode" / "llm-agentic-rules"
     if target == "aider":
         return home / ".aider" / "llm-agentic-rules"
     if target == "gemini-cli":

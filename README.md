@@ -41,12 +41,64 @@ This project helps teams convert broad AI engineering concerns into repeatable o
 | Area | What This Framework Provides |
 |------|-------------------------------|
 | Standardized rules | Consistent guidance that can be reused across projects and teams |
+### Standardized Rules
+Consistent guidelines for LLM/agentic development that can be applied universally across projects. Each rule is designed to be:
+- **Clear**: Unambiguous language that leaves no room for interpretation
+- **Actionable**: Specific steps that can be immediately implemented
+- **Measurable**: Criteria for determining compliance and success
+- **Maintainable**: Easy to update as best practices evolve
+
 | Best practices | Recommended patterns for production LLM and agentic systems |
+### Best Practices
+Industry-proven patterns and approaches that have been validated in production environments. These practices are derived from:
+- Real-world deployment experiences
+- Community feedback and contributions
+- Academic research and publications
+- Industry standards and compliance requirements
+
 | Anti-patterns | Common failure modes and safer alternatives |
+### Anti-Patterns
+Common pitfalls to avoid, saving teams from learning lessons the hard way. Each anti-pattern includes:
+- Description of the problematic approach
+- Why it fails or causes issues
+- Correct alternative approaches
+- Code examples demonstrating the fix
+
+
 | Checklists | Release, review, onboarding, and audit verification steps |
+### Checklists
+Actionable completion verification steps that ensure nothing falls through the cracks. Checklists are:
+- Pre-formatted for easy copy-paste
+- Organized by priority and order of operations
+- Include pass/fail criteria for each item
+- Suitable for both manual and automated verification
+
+
 | Examples | Implementation patterns for prompts, tools, APIs, testing, and operations |
+### Examples
+Real-world implementation patterns demonstrating practical application of rules. Examples feature:
+- Multiple programming languages where applicable
+- Common framework integrations
+- Edge case handling
+- Production-ready code snippets
+
+
 | Troubleshooting | Practical symptoms, causes, and remediation steps |
+### Troubleshooting
+Common issues and solutions organized for quick reference. Each troubleshooting entry contains:
+- Symptom description
+- Root cause analysis
+- Step-by-step resolution
+- Prevention strategies
+
 | Advanced topics | Scaling, governance, performance, safety, and cross-domain tradeoffs |
+### Advanced Topics
+Deep-dive into complex scenarios for experienced practitioners. Advanced sections cover:
+- Performance optimization techniques
+- Scalability considerations
+- Edge cases and corner scenarios
+- Integration patterns with other systems
+
 
 ## Target Audience
 
