@@ -80,8 +80,8 @@ def target_base(target: str, home: Path, target_root: Path | None = None) -> Pat
         return config / "kilocode" / "llm-agentic-rules"
     if target == "hermes-agent":
         return config / "hermes-agent" / "llm-agentic-rules"
-    if target == "kimicode":
-        return config / "kimicode" / "llm-agentic-rules"
+    if target == "kimi-code":
+        return config / "kimi-code" / "llm-agentic-rules"
     if target == "aider":
         return home / ".aider" / "llm-agentic-rules"
     if target == "gemini-cli":

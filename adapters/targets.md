@@ -1,24 +1,27 @@
 # Adapter Targets
 
-The framework targets 15 coding-agent and IDE assistant environments.
+The framework targets 18 coding-agent and IDE assistant environments.
 
 | # | Target | Primary Files |
 |---|--------|---------------|
 | 1 | Codex | `.codex-plugin/plugin.json`, `skills/llm-agentic-rules/SKILL.md` |
 | 2 | Claude Code | `skills/`, `commands/`, `agents/` |
 | 3 | OpenCode | `skills/llm-agentic-rules/SKILL.md`, `agents/` |
-| 4 | Aider | framework instruction file and command prompts |
-| 5 | Gemini CLI | framework context file and command prompts |
-| 6 | Goose | framework recipe/instruction |
-| 7 | Cursor | project rules |
-| 8 | Windsurf | workspace rules |
-| 9 | Cline | custom instructions |
-| 10 | Roo Code | modes and rules |
-| 11 | Continue | assistant context |
-| 12 | Zed | agent instruction context |
-| 13 | Sourcegraph Cody | custom commands/context |
-| 14 | GitHub Copilot | repository instructions |
-| 15 | JetBrains AI | project guideline context |
+| 4 | KiloCode | framework instruction file, commands, and agent roles |
+| 5 | Kimi Code | framework instruction file, commands, and agent roles |
+| 6 | Hermes Agent | framework instruction file, commands, and agent roles |
+| 7 | Aider | framework instruction file and command prompts |
+| 8 | Gemini CLI | framework context file and command prompts |
+| 9 | Goose | framework recipe/instruction |
+| 10 | Cursor | project rules |
+| 11 | Windsurf | workspace rules |
+| 12 | Cline | custom instructions |
+| 13 | Roo Code | modes and rules |
+| 14 | Continue | assistant context |
+| 15 | Zed | agent instruction context |
+| 16 | Sourcegraph Cody | custom commands/context |
+| 17 | GitHub Copilot | repository instructions |
+| 18 | JetBrains AI | project guideline context |
 
 ## Common Payload
 

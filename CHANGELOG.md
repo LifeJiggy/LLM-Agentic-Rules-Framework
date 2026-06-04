@@ -15,9 +15,10 @@ The format follows `Added`, `Changed`, `Fixed`, `Deprecated`, `Removed`, and `Se
 - Production assistant example.
 - Agentic automation example.
 - Codex plugin manifest.
-- Portable skill, command, and agent adapter package for 15 coding agents and IDE assistants.
+- Portable skill, command, and agent adapter package for 18 coding agents and IDE assistants.
 - Cross-platform adapter installer with dry-run and apply modes.
 - Adapter installer target listing.
+- Adapter support for KiloCode, Kimi Code, and Hermes Agent.
 - Adapter installer component filtering.
 - Adapter installer staging root override.
 - Adapter installer unchanged-file skipping.

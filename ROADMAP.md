@@ -58,13 +58,14 @@ This roadmap tracks the work needed to make the framework match its production-g
 
 - [x] Add Codex plugin manifest.
 - [x] Add Claude-style skill, commands, and agent role files.
-- [x] Add adapter manifest for 15 coding-agent and IDE assistant targets.
+- [x] Add adapter manifest for 18 coding-agent and IDE assistant targets.
 - [x] Add cross-platform adapter installer for Windows, macOS, and Linux.
 - [x] Add plugin installation guide.
 
 ## Version 2.3 - Adapter Usability Enhancements
 
 - [x] Add target listing to the adapter installer.
+- [x] Add KiloCode, Kimi Code, and Hermes Agent adapter targets.
 - [x] Add component-scoped installs.
 - [x] Add staging installs through target-root override.
 - [x] Add timestamped backups and unchanged-file skipping.

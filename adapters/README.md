@@ -16,6 +16,9 @@ This directory makes the framework portable across coding agents and IDE assista
 | Codex | Plugin | `.codex-plugin/plugin.json` plus `skills/` |
 | Claude Code | Skills and commands | Copy `skills/`, `commands/`, and optional `agents/` |
 | OpenCode | Agent instructions | Reference `skills/llm-agentic-rules/SKILL.md` and commands |
+| KiloCode | Agent instructions | Copy framework skill, commands, docs, and agent roles |
+| Kimi Code | Agent instructions | Copy framework skill, commands, docs, and agent roles |
+| Hermes Agent | Agent instructions | Copy framework skill, commands, docs, and agent roles |
 | Aider | Repo convention | Add framework instruction file to project root or `.aider` docs |
 | Gemini CLI | Context file | Reference framework skill and command prompts |
 | Goose | Recipe/instruction | Use skill as recipe and agents as roles |

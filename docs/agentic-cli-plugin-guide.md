@@ -17,6 +17,9 @@ The adapter model follows the useful conventions from the Claude reference proje
 | Codex | Native plugin manifest plus skill |
 | Claude Code | Skill and command files |
 | OpenCode | Instruction and agent files |
+| KiloCode | Instruction, command, and agent files |
+| Kimi Code | Instruction, command, and agent files |
+| Hermes Agent | Instruction, command, and agent files |
 | Aider | Instruction pack |
 | Gemini CLI | Context/instruction pack |
 | Goose | Recipe/instruction pack |
@@ -111,7 +114,7 @@ python scripts/install_agent_adapters.py --target all --target-root ./adapter-pr
 The installer uses Python's `Path.home()` and standard config directories:
 
 - Windows: user profile paths such as `%USERPROFILE%\.claude` and `%USERPROFILE%\.cursor`.
-- macOS/Linux: home and `.config` paths such as `~/.claude`, `~/.config/opencode`, and `~/.continue`.
+- macOS/Linux: home and `.config` paths such as `~/.claude`, `~/.config/opencode`, `~/.config/kilocode`, `~/.config/kimi-code`, `~/.config/hermes-agent`, and `~/.continue`.
 
 If a tool uses project-local configuration in your environment, run the installer in dry-run mode and copy the generated files into that project-specific location.
 
