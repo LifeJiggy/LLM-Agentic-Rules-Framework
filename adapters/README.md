@@ -1,103 +1,149 @@
-# Agentic CLI And IDE Adapters
+# Adapters
 
-This directory makes the framework portable across coding agents and IDE assistants. It follows the same shape seen in the Claude reference projects:
+## Overview
 
-- skill-style reusable instructions;
-- slash-command-style task prompts;
-- specialized agent profiles;
-- install scripts;
-- always-on rule references;
-- cross-platform setup notes.
+The adapters directory contains configuration and installation tools for integrating the LLM & Agentic Rules Framework with various coding agents and IDE assistants.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    A[Adapters] --> B[Manifest]
+    A --> C[Targets]
+    A --> D[Installer]
+    A --> E[CLI]
+    
+    B --> B1[manifest.json]
+    C --> C1[targets.md]
+    D --> D1[install_agent_adapters.py]
+    E --> E1[cli.py]
+    
+    B1 --> F[Target Configuration]
+    C1 --> F
+    D1 --> G[Installation Process]
+    E1 --> G
+```
+
+## Components
+
+| Component | File | Purpose |
+|-----------|------|---------|
+| Manifest | `manifest.json` | Framework metadata and target configuration |
+| Targets | `targets.md` | Target list and configuration guide |
+| Installer | `install_agent_adapters.py` | Automated installation script |
+| CLI | `cli.py` | Command-line interface for framework operations |
 
 ## Supported Targets
 
-| Target | Mode | Adapter Strategy |
-|--------|------|------------------|
-| Codex | Plugin | `.codex-plugin/plugin.json` plus `skills/` |
-| Claude Code | Skills and commands | Copy `skills/`, `commands/`, and optional `agents/` |
-| OpenCode | Agent instructions | Reference `skills/llm-agentic-rules/SKILL.md` and commands |
-| KiloCode | Agent instructions | Copy framework skill, commands, docs, and agent roles |
-| Kimi Code | Agent instructions | Copy framework skill, commands, docs, and agent roles |
-| Hermes Agent | Agent instructions | Copy framework skill, commands, docs, and agent roles |
-| Aider | Repo convention | Add framework instruction file to project root or `.aider` docs |
-| Gemini CLI | Context file | Reference framework skill and command prompts |
-| Goose | Recipe/instruction | Use skill as recipe and agents as roles |
-| Cursor | IDE rules | Convert skill to project rules |
-| Windsurf | IDE rules | Convert skill to workspace rules |
-| Cline | Custom instructions | Use skill and command prompts as custom instructions |
-| Roo Code | Mode rules | Use agents as modes and skill as shared rules |
-| Continue | Assistant context | Add skill and domain docs as context |
-| Zed | Agent instructions | Add framework instruction reference |
-| Sourcegraph Cody | Custom commands/context | Add command prompts and framework docs |
-| GitHub Copilot | Repository instructions | Add framework guidance as repo instructions |
-| JetBrains AI | Project guidelines | Add framework guidance as project context |
+The framework supports 18 coding-agent and IDE assistant environments:
 
-## Install
-
-Dry run first:
-
-```bash
-python scripts/install_agent_adapters.py --target all --dry-run
+```mermaid
+flowchart LR
+    A[18 Targets] --> B[CLI Agents]
+    A --> C[IDE Assistants]
+    A --> D[Code Editors]
+    
+    B --> B1[Codex]
+    B --> B2[Claude Code]
+    B --> B3[OpenCode]
+    B --> B4[KiloCode]
+    B --> B5[Kimi Code]
+    B --> B6[Hermes Agent]
+    B --> B7[Aider]
+    B --> B8[Gemini CLI]
+    B --> B9[Goose]
+    
+    C --> C1[GitHub Copilot]
+    C --> C2[Sourcegraph Cody]
+    C --> C3[Continue]
+    
+    D --> D1[Cursor]
+    D --> D2[Windsurf]
+    D --> D3[Cline]
+    D --> D4[Roo Code]
+    D --> D5[Zed]
+    D --> D6[JetBrains AI]
 ```
 
-Apply for one target:
+## Quick Start
+
+### List Available Targets
 
 ```bash
-python scripts/install_agent_adapters.py --target claude-code --apply
+python scripts/cli.py list
 ```
 
-Apply for all known targets:
+### Preview Installation
 
 ```bash
-python scripts/install_agent_adapters.py --target all --apply
+python scripts/cli.py install --target claude-code --dry-run
 ```
 
-The installer is conservative. It creates backups before overwriting files and supports Windows, macOS, and Linux path conventions.
-
-## Installer Enhancements
-
-- List supported targets with `--list-targets`.
-- Install one component group with `--component skill`, `--component commands`, `--component agents`, `--component docs`, or `--component codex`.
-- Redirect installs into a staging directory with `--target-root ./adapter-preview`.
-- Skip files whose content is already identical.
-- Create timestamped backups before overwriting by default.
-- Disable backups explicitly with `--no-backup`.
-- Stop after the first write failure with `--fail-fast`.
-- Print a final summary of planned, copied, skipped, and failed files.
-
-Examples:
+### Install for Target
 
 ```bash
-python scripts/install_agent_adapters.py --list-targets
-python scripts/install_agent_adapters.py --target all --component skill --dry-run
-python scripts/install_agent_adapters.py --target claude-code --target-root ./adapter-preview --apply
-python scripts/install_agent_adapters.py --target all --apply --fail-fast
+python scripts/cli.py install --target claude-code --apply
 ```
 
-## Safety Model
+### Install All Targets
 
-- The installer refuses to write unless `--apply` is passed.
-- Dry-run mode is the expected first step.
-- Existing files are backed up with timestamped `.bak` suffixes before overwrite.
-- Existing directories and symlink destinations are refused instead of overwritten.
-- Changed files are written through a temporary file and atomically replaced.
-- Installer source files are checked before the run starts.
-- Any failed copy returns a non-zero process exit code.
-- The adapter payload is documentation and prompt content only; it does not install external binaries.
+```bash
+python scripts/cli.py install --target all --apply
+```
 
-## Recovery Playbook
+## Installation Process
 
-1. Re-run the command with `--dry-run` and the same targets.
-2. Check the final summary for failed operations.
-3. Restore any overwritten file from the adjacent `.bak` file if needed.
-4. Re-run with `--fail-fast` after fixing permissions or path conflicts.
-5. Use `--target-root ./adapter-preview` to reproduce the install without touching live tool config.
+```mermaid
+flowchart TD
+    A[Installation Request] --> B[Validate Source]
+    B --> C[Check Target]
+    C --> D[Backup Existing]
+    D --> E[Copy Files]
+    E --> F[Configure Target]
+    F --> G[Verify Installation]
+    G --> H{Success?}
+    H -->|Yes| I[Installation Complete]
+    H -->|No| J[Rollback]
+    J --> K[Report Error]
+```
 
-## Manual Use
+## Target Configuration
 
-If a tool does not support plugins directly, paste or reference:
+Each target has specific configuration requirements:
 
-- `skills/llm-agentic-rules/SKILL.md` as the main instruction;
-- `commands/rules-audit.md`, `commands/rules-plan.md`, and `commands/rules-release.md` as command prompts;
-- `agents/*.md` as role profiles;
-- `docs/checklist-packs.md` to pick the right review pack.
+| Target | Config File | Skill Path | Agent Path |
+|--------|-------------|------------|------------|
+| Codex | `.codex-plugin/plugin.json` | `skills/` | `agents/` |
+| Claude Code | `.claude/settings.json` | `skills/` | `agents/` |
+| Cursor | `.cursorrules` | `skills/` | N/A |
+| Windsurf | `.windsurfrules` | `skills/` | N/A |
+| GitHub Copilot | `.github/copilot-instructions.md` | `skills/` | N/A |
+
+## CLI Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `check` | Check system requirements | `python scripts/cli.py check` |
+| `validate` | Validate framework structure | `python scripts/cli.py validate --verbose` |
+| `report` | Generate framework report | `python scripts/cli.py report --format markdown` |
+| `export` | Export checklists | `python scripts/cli.py export --output checklists.md` |
+| `install` | Install adapter for target | `python scripts/cli.py install --target claude-code` |
+| `list` | List available targets | `python scripts/cli.py list` |
+
+## Troubleshooting
+
+### Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| Target not found | Run `python scripts/cli.py list` to see available targets |
+| Permission denied | Run with appropriate permissions or use `--dry-run` first |
+| Config file exists | Backup existing config before installation |
+| Installation failed | Check error message and retry with `--verbose` |
+
+### Getting Help
+
+```bash
+python scripts/cli.py --help
+python scripts/cli.py install --help
+```

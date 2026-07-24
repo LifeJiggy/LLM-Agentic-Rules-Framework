@@ -1,7 +1,13 @@
 {
   "name": "llm-agentic-rules-adapters",
-  "version": "1.0.0",
-  "description": "Portable adapter map for installing or referencing the LLM Agentic Rules Framework in coding agents and IDE assistants.",
+  "version": "2.0.0",
+  "description": "Portable adapter map for installing the LLM Agentic Rules Framework in coding agents and IDE assistants.",
+  "framework": {
+    "name": "LLM & Agentic Rules Framework",
+    "version": "2.0.0",
+    "root": ".",
+    "repository": "https://github.com/Lifejiggy/llm-agentic-rules-framework"
+  },
   "supportedTargets": [
     "codex",
     "claude-code",
@@ -23,11 +29,45 @@
     "jetbrains-ai"
   ],
   "components": {
-    "skill": "skills/llm-agentic-rules/SKILL.md",
-    "commands": "commands/",
-    "agents": "agents/",
-    "docs": "docs/",
-    "templates": "assets/templates/"
+    "skill": {
+      "source": "skills/llm-agentic-rules/SKILL.md",
+      "description": "Main skill file for framework integration"
+    },
+    "commands": {
+      "source": "commands/",
+      "description": "CLI commands for framework operations"
+    },
+    "agents": {
+      "source": "agents/",
+      "description": "Agent definitions for lifecycle management"
+    },
+    "docs": {
+      "source": "docs/",
+      "description": "Documentation and guides"
+    },
+    "templates": {
+      "source": "assets/templates/",
+      "description": "Reusable templates"
+    },
+    "domains": {
+      "source": "domains/",
+      "description": "Core domain rules"
+    },
+    "modules": {
+      "source": ["evaluation/", "loop/", "tools/", "incident-response/", "deployment/", "monitoring/", "cost-management/", "vendor-management/", "governance/"],
+      "description": "Operational module guidance"
+    }
+  },
+  "cli": {
+    "entry_point": "scripts/cli.py",
+    "commands": {
+      "check": "Check system requirements",
+      "validate": "Validate framework structure",
+      "report": "Generate framework report",
+      "export": "Export checklists",
+      "install": "Install adapter for a target",
+      "list": "List available targets and components"
+    }
   },
   "installer": {
     "script": "scripts/install_agent_adapters.py",
@@ -35,6 +75,36 @@
     "applyOne": "python scripts/install_agent_adapters.py --target claude-code --apply",
     "listTargets": "python scripts/install_agent_adapters.py --list-targets",
     "componentInstall": "python scripts/install_agent_adapters.py --target all --component skill --apply",
-    "stagedInstall": "python scripts/install_agent_adapters.py --target all --target-root ./adapter-preview --apply"
+    "stagedInstall": "python scripts/install_agent_adapters.py --target all --target-root ./adapter-preview --apply",
+    "failFast": "python scripts/install_agent_adapters.py --target all --apply --fail-fast"
+  },
+  "targetConfig": {
+    "codex": {
+      "configFile": ".codex-plugin/plugin.json",
+      "skillPath": "skills/",
+      "agentPath": "agents/",
+      "description": "Codex CLI integration"
+    },
+    "claude-code": {
+      "configFile": ".claude/settings.json",
+      "skillPath": "skills/",
+      "agentPath": "agents/",
+      "description": "Claude Code integration"
+    },
+    "cursor": {
+      "configFile": ".cursorrules",
+      "skillPath": "skills/",
+      "description": "Cursor IDE integration"
+    },
+    "windsurf": {
+      "configFile": ".windsurfrules",
+      "skillPath": "skills/",
+      "description": "Windsurf IDE integration"
+    },
+    "github-copilot": {
+      "configFile": ".github/copilot-instructions.md",
+      "skillPath": "skills/",
+      "description": "GitHub Copilot integration"
+    }
   }
 }
