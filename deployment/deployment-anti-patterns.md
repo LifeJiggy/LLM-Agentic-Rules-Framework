@@ -771,3 +771,114 @@ Key takeaways:
 7. **Deploy small changes** - Small, frequent deployments reduce risk
 8. **Consider dependencies** - Coordinate with dependent services
 9. **Document processes** - Make knowledge accessible to the team
+
+---
+
+## Quick Reference: Anti-Pattern to Solution Mapping
+
+| Anti-Pattern | Impact | Solution |
+|--------------|--------|----------|
+| Manual Deployments | Human error, inconsistency | CI/CD automation |
+| No Rollback Plan | Extended downtime | Automated rollback procedures |
+| Skipping Testing | Bugs in production | Multi-stage testing pipeline |
+| Configuration Drift | Inconsistent environments | Infrastructure as Code |
+| Secrets in Code | Security vulnerabilities | Secret management systems |
+| No Monitoring | Delayed issue detection | Comprehensive observability |
+| Big Bang Deployments | High risk, difficult debugging | Feature flags, canary deployments |
+| Ignoring Dependencies | Cascading failures | Dependency mapping, circuit breakers |
+| Inadequate Documentation | Knowledge silos | Runbooks, automated documentation |
+
+---
+
+## Common Anti-Pattern Recovery Strategies
+
+### If You Have Manual Deployments
+
+```
+Immediate: Document current process
+Short-term: Create CI/CD pipeline for critical paths
+Long-term: Automate all deployments
+Timeline: 2-4 weeks
+```
+
+### If You Have No Rollback Plan
+
+```
+Immediate: Document current deployment state
+Short-term: Implement rollback scripts
+Long-term: Automated rollback with health checks
+Timeline: 1-2 weeks
+```
+
+### If You Skip Testing
+
+```
+Immediate: Add basic smoke tests
+Short-term: Implement unit and integration tests
+Long-term: Complete test coverage with automation
+Timeline: 4-8 weeks
+```
+
+### If You Have Configuration Drift
+
+```
+Immediate: Document current configuration
+Short-term: Implement ConfigMaps/Secrets
+Long-term: Full Infrastructure as Code
+Timeline: 2-4 weeks
+```
+
+### If You Have Secrets in Code
+
+```
+Immediate: Rotate exposed secrets
+Short-term: Move to environment variables
+Long-term: Implement secret management system
+Timeline: 1-2 weeks
+```
+
+### If You Have No Monitoring
+
+```
+Immediate: Add basic health checks
+Short-term: Implement metrics and logging
+Long-term: Full observability stack
+Timeline: 2-4 weeks
+```
+
+---
+
+## Anti-Pattern Prevention Checklist
+
+### Process Checklist
+
+- [ ] Deployment process is documented
+- [ ] Rollback procedure is documented
+- [ ] Testing stages are defined
+- [ ] Configuration management is defined
+- [ ] Secret management is defined
+- [ ] Monitoring strategy is defined
+- [ ] Communication plan is defined
+- [ ] Training is provided to team
+
+### Technical Checklist
+
+- [ ] CI/CD pipeline is configured
+- [ ] Automated tests are implemented
+- [ ] Infrastructure as Code is implemented
+- [ ] Secret management is implemented
+- [ ] Monitoring and alerting is configured
+- [ ] Logging is configured
+- [ ] Health checks are implemented
+- [ ] Rollback automation is implemented
+
+### Cultural Checklist
+
+- [ ] Team understands anti-patterns
+- [ ] Team is trained on best practices
+- [ ] Team follows deployment checklist
+- [ ] Team communicates during deployments
+- [ ] Team learns from incidents
+- [ ] Team shares knowledge
+- [ ] Team improves processes continuously
+- [ ] Team celebrates successful deployments
