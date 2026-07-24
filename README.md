@@ -7,30 +7,207 @@
 [![Agents](https://img.shields.io/badge/Agents-12-purple.svg)](#agents)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-> A production-grade rules framework for building LLM chatbots, agentic systems, and AI-powered applications.
+> A production-grade rules framework for building robust, secure, maintainable, and auditable AI systems.
+
+## What Is This?
+
+The **LLM & Agentic Rules Framework** is a structured collection of rules, practices, examples, and checklists for teams building LLM chatbots, agentic systems, and AI-powered applications. It covers **16 domains** with **194 files** providing guidance from fundamentals through advanced production concerns.
+
+```mermaid
+flowchart LR
+    A[What Is This?] --> B[Rules Framework]
+    A --> C[16 Domains]
+    A --> D[194 Files]
+    
+    B --> B1[Standards]
+    B --> B2[Best Practices]
+    B --> B3[Checklists]
+    
+    C --> C1[10 Core Domains]
+    C --> C2[6 Operational Modules]
+    
+    D --> D1[70 Domain Files]
+    D --> D2[63 Module Files]
+    D --> D3[61 Other Files]
+```
+
+## Who Is This For?
+
+| Audience | How They Use The Framework |
+|----------|---------------------------|
+| **AI/ML Engineers** | Building LLM-powered applications with production standards |
+| **Software Developers** | Integrating AI capabilities into existing products |
+| **DevOps/Platform Engineers** | Deploying and operating AI infrastructure |
+| **Security Professionals** | Reviewing prompt, data, and tool risk |
+| **Technical Leads** | Setting team standards and governance |
+| **Compliance Teams** | Evaluating AI system regulatory risk |
+| **Researchers** | Translating agentic patterns into practical systems |
+
+```mermaid
+flowchart TD
+    A[Who Is This For?] --> B[Builders]
+    A --> C[Operators]
+    A --> D[Governors]
+    
+    B --> B1[AI/ML Engineers]
+    B --> B2[Software Developers]
+    B --> B3[Researchers]
+    
+    C --> C1[DevOps Engineers]
+    C --> C2[Platform Engineers]
+    C --> C3[Security Professionals]
+    
+    D --> D1[Technical Leads]
+    D --> D2[Compliance Teams]
+    D --> D3[Governance Teams]
+```
+
+## Why This Framework?
+
+| Problem | Solution | Benefit |
+|---------|----------|---------|
+| Inconsistent AI development practices | Standardized rules across 16 domains | Predictable quality |
+| Security vulnerabilities in AI systems | Security-first design with threat modeling | Reduced risk |
+| Compliance gaps and audit failures | Regulatory mapping and evidence templates | Audit readiness |
+| Production incidents and outages | Incident response and monitoring guidance | Higher reliability |
+| Knowledge silos across teams | Shared best practices and examples | Team collaboration |
+
+```mermaid
+flowchart LR
+    A[Why This Framework?] --> B[Standardize]
+    A --> C[Improve]
+    A --> D[Protect]
+    A --> E[Enable]
+    
+    B --> B1[Consistent Practices]
+    C --> C1[Higher Quality]
+    D --> D1[Security & Compliance]
+    E --> E1[Team Success]
+```
+
+## Framework at a Glance
+
+| Component | Count | Description |
+|-----------|-------|-------------|
+| Core Domains | 10 | Fundamental rules for AI systems |
+| Operational Modules | 9 | Production guidance for operations |
+| Agents | 12 | Specialized lifecycle roles |
+| Skills | 9 | Implementation patterns |
+| Memory Files | 10 | Framework context and references |
+| Storage Files | 10 | Templates and rule collections |
+| Documentation | 13 | Guides and references |
+| **Total Files** | **194** | **Complete framework** |
+
+```mermaid
+flowchart TD
+    A[Framework at a Glance] --> B[10 Core Domains]
+    A --> C[9 Operational Modules]
+    A --> D[12 Agents]
+    A --> E[9 Skills]
+    A --> F[20 Memory/Storage]
+    A --> G[13 Documentation]
+    
+    B --> H[194 Total Files]
+    C --> H
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+```
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [What Is This?](#what-is-this)
+- [Who Is This For?](#who-is-this-for)
+- [Why This Framework?](#why-this-framework)
+- [Framework at a Glance](#framework-at-a-glance)
 - [Framework Architecture](#framework-architecture)
+- [Goal](#goal)
+- [Purpose](#purpose)
+- [Brain](#brain)
 - [Domains](#domains)
 - [Modules](#modules)
 - [Agents](#agents)
 - [Skills](#skills)
 - [Quick Start](#quick-start)
 - [Rule Categories](#rule-categories)
-- [Usage Examples](#usage-examples)
-- [Integration Guide](#integration-guide)
 - [Repository Structure](#repository-structure)
 - [Contributing](#contributing)
 - [License](#license)
 - [FAQ](#faq)
 
-## Overview
+## Goal
 
-The **LLM & Agentic Rules Framework** is a structured collection of rules, practices, examples, and checklists for teams building robust, secure, maintainable, and auditable AI systems. It is designed as a reference for real delivery work: architecture reviews, implementation, code review, testing, deployment, incident response, and governance.
+The framework aims to **standardize AI development**, **improve system quality**, and **reduce risk** while enabling team collaboration and supporting compliance.
 
-The framework covers **16 domains** with a consistent **7-file structure** in each domain, plus **12 specialized agents**, **9 skill files**, and comprehensive **memory** and **storage** resources.
+**Success Criteria**:
+- 100% of new AI projects use framework standards
+- Production incidents reduced by 50%
+- Zero critical security incidents
+- 100% compliance with regulations
+
+See [goal.md](./goal.md) for complete goals, objectives, and success metrics.
+
+```mermaid
+flowchart TD
+    A[Framework Goals] --> B[Standardize]
+    A --> C[Improve Quality]
+    A --> D[Reduce Risk]
+    A --> E[Enable Collaboration]
+    
+    B --> F[Consistent Practices]
+    C --> F
+    D --> F
+    E --> F
+    
+    F --> G[Successful AI Systems]
+```
+
+## Purpose
+
+**Mission**: To provide a comprehensive, production-grade rules framework that enables teams to build robust, secure, maintainable, and auditable AI systems with confidence.
+
+**Core Values**: Quality, Security, Compliance, Collaboration, Transparency, Continuous Improvement
+
+See [purpose.md](./purpose.md) for complete mission, value proposition, and core values.
+
+```mermaid
+flowchart TD
+    A[Purpose] --> B[Standardize]
+    A --> C[Improve]
+    A --> D[Protect]
+    A --> E[Enable]
+    
+    B --> F[Quality AI Systems]
+    C --> F
+    D --> F
+    E --> F
+```
+
+## Brain
+
+The framework's **intellectual architecture** includes knowledge base, decision engine, learning system, and adaptation layer for continuous improvement.
+
+**Key Capabilities**:
+- Cross-domain intelligence and dependency mapping
+- Automated rule validation and compliance checking
+- Feedback-driven knowledge evolution
+- Technology and regulation adaptation
+
+See [brain.md](./brain.md) for complete intellectual architecture and decision framework.
+
+```mermaid
+flowchart TD
+    A[Framework Brain] --> B[Knowledge Base]
+    A --> C[Decision Engine]
+    A --> D[Learning System]
+    A --> E[Adaptation Layer]
+    
+    B --> B1[Rules]
+    C --> C1[Domain Selection]
+    D --> D1[Feedback]
+    E --> E1[Technology Updates]
+```
 
 ## Framework Architecture
 
