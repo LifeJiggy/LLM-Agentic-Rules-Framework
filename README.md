@@ -9,6 +9,29 @@
 
 > A production-grade rules framework for building, deploying, and using robust, secure, and auditable AI systems.
 
+## Table of Contents
+
+- [What Is This?](#what-is-this)
+- [Who Is This For?](#who-is-this-for)
+- [Why This Framework?](#why-this-framework)
+- [Framework at a Glance](#framework-at-a-glance)
+- [Framework Architecture](#framework-architecture)
+- [Goal](#goal)
+- [Purpose](#purpose)
+- [Brain](#brain)
+- [Domains](#domains)
+- [Modules](#modules)
+- [Agents](#agents)
+- [Skills](#skills)
+- [Quick Start](#quick-start)
+- [Rule Categories](#rule-categories)
+- [Repository Structure](#repository-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [FAQ](#faq)
+
+
+
 ## What Is This?
 
 The **LLM & Agentic Rules Framework** is a structured collection of rules, practices, examples, and checklists for **builders and users** of LLM chatbots, agentic systems, and AI-powered applications. It covers **16 domains** with **194 files** providing guidance from fundamentals through advanced production concerns.
@@ -126,26 +149,6 @@ flowchart TD
     G --> H
 ```
 
-## Table of Contents
-
-- [What Is This?](#what-is-this)
-- [Who Is This For?](#who-is-this-for)
-- [Why This Framework?](#why-this-framework)
-- [Framework at a Glance](#framework-at-a-glance)
-- [Framework Architecture](#framework-architecture)
-- [Goal](#goal)
-- [Purpose](#purpose)
-- [Brain](#brain)
-- [Domains](#domains)
-- [Modules](#modules)
-- [Agents](#agents)
-- [Skills](#skills)
-- [Quick Start](#quick-start)
-- [Rule Categories](#rule-categories)
-- [Repository Structure](#repository-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [FAQ](#faq)
 
 ## Goal
 
