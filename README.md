@@ -7,11 +7,13 @@
 [![Agents](https://img.shields.io/badge/Agents-12-purple.svg)](#agents)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-> A production-grade rules framework for building robust, secure, maintainable, and auditable AI systems.
+> A production-grade rules framework for building, deploying, and using robust, secure, and auditable AI systems.
 
 ## What Is This?
 
-The **LLM & Agentic Rules Framework** is a structured collection of rules, practices, examples, and checklists for teams building LLM chatbots, agentic systems, and AI-powered applications. It covers **16 domains** with **194 files** providing guidance from fundamentals through advanced production concerns.
+The **LLM & Agentic Rules Framework** is a structured collection of rules, practices, examples, and checklists for **builders and users** of LLM chatbots, agentic systems, and AI-powered applications. It covers **16 domains** with **194 files** providing guidance from fundamentals through advanced production concerns.
+
+Whether you are **building** AI systems, **deploying** them to production, **operating** them at scale, **evaluating** their performance, or **using** them in your workflows — this framework gives you the standards and practices to do it right.
 
 ```mermaid
 flowchart LR
@@ -42,12 +44,16 @@ flowchart LR
 | **Technical Leads** | Setting team standards and governance |
 | **Compliance Teams** | Evaluating AI system regulatory risk |
 | **Researchers** | Translating agentic patterns into practical systems |
+| **AI Users** | Understanding how AI systems work and how to use them safely |
+| **Product Managers** | Defining AI product requirements and guardrails |
+| **Data Scientists** | Building and evaluating ML models and pipelines |
 
 ```mermaid
 flowchart TD
     A[Who Is This For?] --> B[Builders]
     A --> C[Operators]
     A --> D[Governors]
+    A --> E[Users]
     
     B --> B1[AI/ML Engineers]
     B --> B2[Software Developers]
@@ -59,7 +65,11 @@ flowchart TD
     
     D --> D1[Technical Leads]
     D --> D2[Compliance Teams]
-    D --> D3[Governance Teams]
+    D --> D3[Product Managers]
+    
+    E --> E1[AI Users]
+    E --> E2[Data Scientists]
+    E --> E3[End Users]
 ```
 
 ## Why This Framework?
@@ -71,6 +81,7 @@ flowchart TD
 | Compliance gaps and audit failures | Regulatory mapping and evidence templates | Audit readiness |
 | Production incidents and outages | Incident response and monitoring guidance | Higher reliability |
 | Knowledge silos across teams | Shared best practices and examples | Team collaboration |
+| Unclear AI usage guidelines | User-facing guidance and safety practices | Safer AI adoption |
 
 ```mermaid
 flowchart LR
@@ -81,8 +92,8 @@ flowchart LR
     
     B --> B1[Consistent Practices]
     C --> C1[Higher Quality]
-    D --> D1[Security & Compliance]
-    E --> E1[Team Success]
+    D --> D1[Security and Compliance]
+    E --> E1[Everyone Succeeds]
 ```
 
 ## Framework at a Glance
@@ -104,7 +115,7 @@ flowchart TD
     A --> C[9 Operational Modules]
     A --> D[12 Agents]
     A --> E[9 Skills]
-    A --> F[20 Memory/Storage]
+    A --> F[20 Memory and Storage]
     A --> G[13 Documentation]
     
     B --> H[194 Total Files]
@@ -213,11 +224,11 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[LLM & Agentic Rules Framework] --> B[Core Domains]
+    A[LLM and Agentic Rules Framework] --> B[Core Domains]
     A --> C[Operational Modules]
     A --> D[Agents]
     A --> E[Skills]
-    A --> F[Memory & Storage]
+    A --> F[Memory and Storage]
     
     B --> B1[01-Core]
     B --> B2[02-Security]
@@ -343,15 +354,15 @@ flowchart LR
     A --> I[Vendor Management]
     A --> J[Governance]
     
-    B --> B1[Safety & Quality]
+    B --> B1[Safety and Quality]
     C --> C1[Agent Loops]
     D --> D1[Tool Integration]
     E --> E1[Incident Handling]
-    F --> F1[CI/CD & Release]
+    F --> F1[CI/CD and Release]
     G --> G1[Observability]
-    H --> H1[Budget & Optimization]
+    H --> H1[Budget and Optimization]
     I --> I1[Third-Party Risk]
-    J --> J1[Policy & Audit]
+    J --> J1[Policy and Audit]
 ```
 
 | Module | Description | Files |
