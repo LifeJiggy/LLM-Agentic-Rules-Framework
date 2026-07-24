@@ -1,0 +1,1294 @@
+# Compliance Domain Rules - Complete Reference
+
+## Overview
+
+The Compliance domain contains rules for legal, regulatory, ethical, and audit readiness throughout the AI system lifecycle.
+
+## COMP-001: Compliance Assessment
+
+### Rule Statement
+
+Every AI system must undergo compliance assessment to identify applicable regulations and requirements.
+
+### Compliance Assessment Framework
+
+```yaml
+compliance_assessment:
+  system_id: "support-assistant-001"
+  assessment_date: "2026-06-04"
+  assessor: "Compliance Team"
+  last_reviewed: "2026-06-04"
+  next_review: "2026-09-04"
+  
+  jurisdictions:
+    - jurisdiction: "European Union"
+      regulations:
+        - regulation: "GDPR"
+          applicability: "Processes EU customer data"
+          requirements:
+            - "Lawful basis for processing"
+            - "Data minimization"
+            - "Purpose limitation"
+            - "Storage limitation"
+            - "Data subject rights"
+            - "Data protection impact assessment"
+            - "Breach notification"
+          status: "compliant"
+          evidence: "DPIA-2026-001, consent_records, retention_policy"
+        
+        - regulation: "EU AI Act"
+          applicability: "AI system deployed in EU"
+          requirements:
+            - "Risk classification"
+            - "Conformity assessment"
+            - "Transparency"
+            - "Human oversight"
+            - "Robustness"
+            - "Record keeping"
+          risk_tier: "limited_risk"
+          status: "compliant"
+          evidence: "risk_assessment, conformity_doc, transparency_notice"
+    
+    - jurisdiction: "United States"
+      regulations:
+        - regulation: "CCPA/CPRA"
+          applicability: "Processes California resident data"
+          requirements:
+            - "Right to know"
+            - "Right to delete"
+            - "Right to opt-out"
+            - "Non-discrimination"
+          status: "compliant"
+          evidence: "privacy_notice, opt_out_mechanism, deletion_process"
+        
+        - regulation: "SOC 2"
+          applicability: "Service organization"
+          requirements:
+            - "Security controls"
+            - "Availability controls"
+            - "Confidentiality controls"
+            - "Privacy controls"
+          status: "compliant"
+          evidence: "soc2_report, control_evidence"
+    
+    - jurisdiction: "Global"
+      regulations:
+        - regulation: "ISO 27001"
+          applicability: "Information security management"
+          requirements:
+            - "ISMS implementation"
+            - "Risk assessment"
+            - "Control implementation"
+            - "Continuous improvement"
+          status: "certified"
+          evidence: "iso27001_certificate, isms_documentation"
+  
+  compliance_matrix:
+    - control: "data_protection"
+      regulations: ["GDPR", "CCPA/CPRA"]
+      status: "compliant"
+      last_reviewed: "2026-06-04"
+    
+    - control: "security_controls"
+      regulations: ["SOC 2", "ISO 27001"]
+      status: "compliant"
+      last_reviewed: "2026-06-04"
+    
+    - control: "ai_transparency"
+      regulations: ["EU AI Act"]
+      status: "compliant"
+      last_reviewed: "2026-06-04"
+    
+    - control: "incident_response"
+      regulations: ["GDPR", "SOC 2"]
+      status: "compliant"
+      last_reviewed: "2026-06-04"
+  
+  gaps:
+    - gap: "DPIA update needed"
+      regulation: "GDPR"
+      description: "DPIA needs update for new data flow"
+      owner: "DPO"
+      target_date: "2026-07-01"
+      status: "in_progress"
+    
+    - gap: "EU AI Act documentation"
+      regulation: "EU AI Act"
+      description: "Additional documentation needed for conformity"
+      owner: "Compliance Team"
+      target_date: "2026-07-15"
+      status: "planned"
+  
+  assessment_methodology:
+    - step: "identify_jurisdictions"
+      description: "Determine where system operates"
+    - step: "map_regulations"
+      description: "Map regulations to jurisdictions"
+    - step: "assess_requirements"
+      description: "Identify specific requirements"
+    - step: "evaluate_compliance"
+      description: "Assess current compliance status"
+    - step: "identify_gaps"
+      description: "Document compliance gaps"
+    - step: "create_remediation_plan"
+      description: "Plan gap remediation"
+    - step: "document_assessment"
+      description: "Document assessment results"
+    - step: "schedule_review"
+      description: "Schedule regular reviews"
+```
+
+### Verification Checklist
+
+- [ ] Jurisdictions identified
+- [ ] Regulations mapped
+- [ ] Requirements documented
+- [ ] Compliance status assessed
+- [ ] Gaps identified
+- [ ] Remediation plan created
+- [ ] Assessment documented
+- [ ] Review scheduled
+
+---
+
+## COMP-002: Evidence Collection
+
+### Rule Statement
+
+Compliance evidence must be collected, validated, and retained for all required controls.
+
+### Evidence Management Framework
+
+```yaml
+evidence_management:
+  evidence_types:
+    - type: "automated"
+      description: "Generated by CI/CD, evaluation, monitoring"
+      examples:
+        - "Test results"
+        - "Scan results"
+        - "Monitoring metrics"
+        - "Audit logs"
+      collection: "automated_pipeline"
+      validation: "automated_checks"
+    
+    - type: "manual"
+      description: "Produced by human review, audit, assessment"
+      examples:
+        - "Review reports"
+        - "Assessment documents"
+        - "Sign-off records"
+        - "Training records"
+      collection: "manual_submission"
+      validation: "human_review"
+    
+    - type: "hybrid"
+      description: "Automated collection with human validation"
+      examples:
+        - "Evidence packages"
+        - "Compliance reports"
+        - "Control assessments"
+      collection: "automated_with_review"
+      validation: "automated_plus_human"
+  
+  evidence_requirements:
+    - control: "data_inventory"
+      evidence_type: "document"
+      description: "Current data inventory"
+      frequency: "quarterly"
+      retention: "3_years"
+      owner: "Data Steward"
+    
+    - control: "risk_assessment"
+      evidence_type: "document"
+      description: "Risk assessment with tier assignment"
+      frequency: "annually"
+      retention: "3_years"
+      owner: "Security Team"
+    
+    - control: "evaluation_results"
+      evidence_type: "report"
+      description: "Evaluation results with pass/fail"
+      frequency: "per_release"
+      retention: "3_years"
+      owner: "ML Team"
+    
+    - control: "security_review"
+      evidence_type: "report"
+      description: "Security review findings"
+      frequency: "per_release"
+      retention: "3_years"
+      owner: "Security Team"
+    
+    - control: "training_completion"
+      evidence_type: "record"
+      description: "Training completion records"
+      frequency: "quarterly"
+      retention: "employment_plus_1_year"
+      owner: "HR"
+    
+    - control: "incident_reports"
+      evidence_type: "report"
+      description: "Incident reports and post-mortems"
+      frequency: "per_incident"
+      retention: "7_years"
+      owner: "Security Team"
+  
+  evidence_standards:
+    integrity:
+      method: "hash_chain"
+      algorithm: "SHA-256"
+      verification: "daily"
+    
+    authenticity:
+      method: "digital_signature"
+      algorithm: "RSA-SHA256"
+      signatory: "evidence_owner"
+    
+    completeness:
+      method: "checklist_validation"
+      checklist: "evidence_checklist"
+      validation: "automated_plus_human"
+    
+    timeliness:
+      method: "timestamp_validation"
+      requirement: "within_30_days"
+      alert: "7_days_before_deadline"
+  
+  evidence_storage:
+    primary:
+      type: "evidence_store"
+      location: "s3://compliance-evidence/"
+      encryption: "AES-256"
+      access_control: "rbac"
+      versioning: "enabled"
+    
+    backup:
+      type: "encrypted_backup"
+      location: "s3://compliance-evidence-backup/"
+      frequency: "daily"
+      retention: "7_years"
+    
+    archive:
+      type: "archive"
+      location: "s3://compliance-evidence-archive/"
+      trigger: "retention_period_expiry"
+      access: "compliance_team_only"
+  
+  evidence_validation:
+    automated_checks:
+      - check: "link_resolution"
+        description: "Verify evidence links resolve"
+        frequency: "daily"
+        action: "alert_on_failure"
+      
+      - check: "timestamp_freshness"
+        description: "Verify evidence is current"
+        frequency: "weekly"
+        threshold: "30_days"
+        action: "alert_if_stale"
+      
+      - check: "signature_validity"
+        description: "Verify digital signatures"
+        frequency: "daily"
+        action: "alert_on_failure"
+      
+      - check: "completeness"
+        description: "Verify all required evidence present"
+        frequency: "per_release"
+        action: "block_release_if_incomplete"
+    
+    human_review:
+      - review: "evidence_quality"
+        reviewer: "compliance_officer"
+        frequency: "quarterly"
+        criteria: ["accuracy", "completeness", "relevance"]
+      
+      - review: "evidence_sufficiency"
+        reviewer: "audit_team"
+        frequency: "annually"
+        criteria: ["sufficiency", "reliability", "validity"]
+```
+
+### Verification Checklist
+
+- [ ] Evidence requirements defined
+- [ ] Evidence collection implemented
+- [ ] Evidence standards documented
+- [ ] Evidence storage configured
+- [ ] Evidence validation implemented
+- [ ] Evidence retention configured
+
+---
+
+## COMP-003: Audit Trail Maintenance
+
+### Rule Statement
+
+All significant system actions must be logged in an immutable audit trail.
+
+### Audit Trail Architecture
+
+```yaml
+audit_trail:
+  events:
+    - event: "authentication"
+      description: "User authentication events"
+      fields:
+        - "event_id"
+        - "timestamp"
+        - "user_id"
+        - "authentication_method"
+        - "source_ip"
+        - "result"
+        - "failure_reason"
+      retention: "1_year"
+      integrity: "hash_chain"
+    
+    - event: "authorization"
+      description: "Access control decisions"
+      fields:
+        - "event_id"
+        - "timestamp"
+        - "user_id"
+        - "resource"
+        - "action"
+        - "result"
+        - "role"
+      retention: "1_year"
+      integrity: "hash_chain"
+    
+    - event: "data_access"
+      description: "Data access events"
+      fields:
+        - "event_id"
+        - "timestamp"
+        - "user_id"
+        - "data_type"
+        - "record_id"
+        - "action"
+        - "result"
+        - "justification"
+      retention: "7_years"
+      integrity: "hash_chain"
+    
+    - event: "configuration_change"
+      description: "System configuration changes"
+      fields:
+        - "event_id"
+        - "timestamp"
+        - "user_id"
+        - "component"
+        - "change_type"
+        - "old_value"
+        - "new_value"
+        - "reason"
+      retention: "3_years"
+      integrity: "hash_chain"
+    
+    - event: "release_decision"
+      description: "Release gate decisions"
+      fields:
+        - "event_id"
+        - "timestamp"
+        - "system_id"
+        - "release_id"
+        - "decision"
+        - "evaluator"
+        - "rationale"
+        - "evidence_links"
+      retention: "7_years"
+      integrity: "hash_chain"
+    
+    - event: "incident"
+      description: "Security and operational incidents"
+      fields:
+        - "event_id"
+        - "timestamp"
+        - "incident_id"
+        - "severity"
+        - "description"
+        - "affected_systems"
+        - "resolution"
+      retention: "7_years"
+      integrity: "hash_chain"
+    
+    - event: "violation"
+      description: "Policy violations"
+      fields:
+        - "event_id"
+        - "timestamp"
+        - "violation_id"
+        - "policy"
+        - "severity"
+        - "description"
+        - "user_id"
+        - "action_taken"
+      retention: "7_years"
+      integrity: "hash_chain"
+  
+  integrity:
+    method: "hash_chain"
+    algorithm: "SHA-256"
+    verification: "daily"
+    alert_on_failure: "immediate"
+  
+  storage:
+    primary:
+      type: "append_only_log"
+      location: "immutable_log_store"
+      encryption: "AES-256"
+      replication: 3
+    
+    backup:
+      type: "encrypted_backup"
+      location: "s3://audit-backup/"
+      frequency: "daily"
+      retention: "7_years"
+  
+  access:
+    read_access:
+      - role: "security_team"
+        scope: "all_events"
+      - role: "compliance_team"
+        scope: "all_events"
+      - role: "engineering_team"
+        scope: "configuration_changes, incidents"
+      - role: "product_team"
+        scope: "release_decisions"
+    
+    write_access:
+      - role: "system"
+        scope: "automated_events"
+      - role: "security_team"
+        scope: "manual_events"
+    
+    admin_access:
+      - role: "security_admin"
+        scope: "all_access"
+        constraints: ["mfa_required", "approval_required"]
+  
+  monitoring:
+    real_time:
+      - alert: "unauthorized_access_attempt"
+        severity: "critical"
+        action: "alert_security_team"
+      - alert: "hash_chain_break"
+        severity: "critical"
+        action: "alert_security_team"
+      - alert: "bulk_data_access"
+        severity: "high"
+        action: "alert_security_team"
+    
+    periodic:
+      - review: "weekly_audit_summary"
+        scope: "all_events"
+        reviewer: "security_team"
+      - review: "monthly_anomaly_analysis"
+        scope: "all_events"
+        reviewer: "security_team"
+      - review: "quarterly_compliance_review"
+        scope: "compliance_events"
+        reviewer: "compliance_team"
+```
+
+### Verification Checklist
+
+- [ ] Audit trail events defined
+- [ ] Event fields documented
+- [ ] Integrity protection implemented
+- [ ] Storage configured
+- [ ] Access controls implemented
+- [ ] Monitoring configured
+
+---
+
+## COMP-004: Exception Register
+
+### Rule Statement
+
+All exceptions to compliance requirements must be documented with owner, rationale, and expiration.
+
+### Exception Register Structure
+
+```yaml
+exception_register:
+  system_id: "support-assistant-001"
+  last_updated: "2026-06-04"
+  owner: "Compliance Team"
+  
+  exceptions:
+    - exception_id: "EXC-001"
+      control_id: "DATA-003"
+      control_name: "Data Retention Enforcement"
+      exception_type: "technical_limitation"
+      description: "Automated retention enforcement not yet implemented for legacy data"
+      rationale: "Legacy data migration in progress, automated enforcement pending"
+      compensating_controls:
+        - "Manual review of legacy data quarterly"
+        - "Retention policy documented and enforced for new data"
+        - "Legacy data purge scheduled for Q3 2026"
+      risk_assessment:
+        risk_level: "medium"
+        likelihood: "low"
+        impact: "medium"
+        residual_risk: "low"
+      owner: "Data Engineering Lead"
+      approver: "Compliance Officer"
+      proposed_date: "2026-03-01"
+      approved_date: "2026-03-05"
+      expires_on: "2026-09-01"
+      status: "active"
+      review_history:
+        - review_date: "2026-06-01"
+          reviewer: "Compliance Officer"
+          decision: "renew"
+          rationale: "Migration still in progress, compensating controls effective"
+          next_review: "2026-07-01"
+    
+    - exception_id: "EXC-002"
+      control_id: "SEC-007"
+      control_name: "Penetration Testing"
+      exception_type: "resource_constraint"
+      description: "Annual penetration test delayed due to vendor availability"
+      rationale: "Vendor resource constraints, test scheduled for next month"
+      compensating_controls:
+        - "Enhanced automated security scanning"
+        - "Manual security review completed"
+        - "Vulnerability assessment current"
+      risk_assessment:
+        risk_level: "low"
+        likelihood: "low"
+        impact: "low"
+        residual_risk: "low"
+      owner: "Security Lead"
+      approver: "CISO"
+      proposed_date: "2026-05-15"
+      approved_date: "2026-05-20"
+      expires_on: "2026-07-15"
+      status: "active"
+      review_history:
+        - review_date: "2026-06-01"
+          reviewer: "CISO"
+          decision: "maintain"
+          rationale: "Test scheduled for June 15, compensating controls adequate"
+          next_review: "2026-06-15"
+  
+  lifecycle:
+    states:
+      - state: "proposed"
+        description: "Exception requested but not yet approved"
+        transitions: ["approved", "rejected"]
+      
+      - state: "approved"
+        description: "Exception approved with conditions"
+        transitions: ["active", "rejected"]
+      
+      - state: "active"
+        description: "Exception currently in effect"
+        transitions: ["expired", "renewed", "closed"]
+      
+      - state: "expired"
+        description: "Exception has expired"
+        transitions: ["renewed", "closed"]
+      
+      - state: "renewed"
+        description: "Exception has been renewed"
+        transitions: ["active", "expired"]
+      
+      - state: "closed"
+        description: "Exception no longer needed"
+        transitions: []
+      
+      - state: "rejected"
+        description: "Exception request rejected"
+        transitions: []
+    
+    approval_process:
+      - step: "request"
+        description: "Exception requested with rationale"
+        required_fields:
+          - "control_id"
+          - "description"
+          - "rationale"
+          - "compensating_controls"
+          - "risk_assessment"
+          - "proposed_duration"
+      
+      - step: "review"
+        description: "Risk assessment and compensating controls review"
+        reviewer: "compliance_officer"
+        criteria:
+          - "Rationale is valid"
+          - "Compensating controls are adequate"
+          - "Risk is acceptable"
+      
+      - step: "approve"
+        description: "Final approval"
+        approver: "compliance_officer" (P2) or "ciso" (P0/P1)
+      
+      - step: "monitor"
+        description: "Monitor exception compliance"
+        frequency: "monthly"
+      
+      - step: "review"
+        description: "Review before expiration"
+        timing: "30_days_before_expiration"
+      
+      - step: "close"
+        description: "Close or renew exception"
+  
+  reporting:
+    metrics:
+      - metric: "total_exceptions"
+        target: "< 10"
+        current: 2
+        status: "met"
+      
+      - metric: "expired_exceptions"
+        target: 0
+        current: 0
+        status: "met"
+      
+      - metric: "average_exception_age"
+        target: "< 90_days"
+        current: 45_days
+        status: "met"
+      
+      - metric: "exception_renewal_rate"
+        target: "< 20%"
+        current: 0%
+        status: "met"
+    
+    dashboard:
+      name: "Exception Register Dashboard"
+      metrics:
+        - "total_exceptions"
+        - "exceptions_by_status"
+        - "exceptions_by_control"
+        - "exceptions_by_age"
+        - "upcoming_expirations"
+      refresh: "daily"
+      distribution: ["compliance_team", "security_team"]
+```
+
+### Verification Checklist
+
+- [ ] Exception register created
+- [ ] Exception process documented
+- [ ] Approval process defined
+- [ ] Monitoring configured
+- [ ] Reporting configured
+- [ ] Reviews scheduled
+
+---
+
+## COMP-005: Policy Documentation
+
+### Rule Statement
+
+All compliance policies must be documented, approved, and communicated.
+
+### Policy Framework
+
+```yaml
+policy_framework:
+  policies:
+    - policy_id: "POL-001"
+      name: "Data Protection Policy"
+      description: "Policy for protecting personal data"
+      scope: "All systems processing personal data"
+      owner: "DPO"
+      approved_by: "Executive Team"
+      effective_date: "2026-01-01"
+      review_frequency: "annually"
+      last_reviewed: "2026-01-01"
+      next_review: "2027-01-01"
+      status: "active"
+      version: "2.0"
+      
+      requirements:
+        - "All personal data must have lawful basis"
+        - "Data minimization must be implemented"
+        - "Data retention must be enforced"
+        - "Data subject rights must be supported"
+        - "Breach notification must be within 72 hours"
+      
+      procedures:
+        - "Data inventory maintenance"
+        - "Consent management"
+        - "Retention enforcement"
+        - "DSAR handling"
+        - "Breach response"
+    
+    - policy_id: "POL-002"
+      name: "Security Policy"
+      description: "Policy for system and data security"
+      scope: "All AI systems"
+      owner: "CISO"
+      approved_by: "Executive Team"
+      effective_date: "2026-01-01"
+      review_frequency: "annually"
+      last_reviewed: "2026-01-01"
+      next_review: "2027-01-01"
+      status: "active"
+      version: "2.0"
+      
+      requirements:
+        - "Authentication required for all access"
+        - "Authorization enforced with least privilege"
+        - "Secrets stored securely"
+        - "Encryption at rest and in transit"
+        - "Security monitoring active"
+        - "Incident response ready"
+      
+      procedures:
+        - "Access control management"
+        - "Secret management"
+        - "Security monitoring"
+        - "Incident response"
+        - "Vulnerability management"
+    
+    - policy_id: "POL-003"
+      name: "AI Ethics Policy"
+      description: "Policy for ethical AI use"
+      scope: "All AI systems"
+      owner: "Chief Ethics Officer"
+      approved_by: "Executive Team"
+      effective_date: "2026-01-01"
+      review_frequency: "annually"
+      last_reviewed: "2026-01-01"
+      next_review: "2027-01-01"
+      status: "active"
+      version: "1.0"
+      
+      requirements:
+        - "AI systems must be transparent"
+        - "AI systems must be fair and unbiased"
+        - "AI systems must be safe"
+        - "AI systems must be accountable"
+        - "Human oversight for high-risk decisions"
+      
+      procedures:
+        - "Fairness testing"
+        - "Bias monitoring"
+        - "Transparency documentation"
+        - "Human review implementation"
+        - "Ethics review process"
+  
+  communication:
+    methods:
+      - method: "policy_portal"
+        description: "Central policy documentation portal"
+        access: "all_employees"
+      
+      - method: "training"
+        description: "Policy training for relevant roles"
+        frequency: "onboarding_and_annually"
+      
+      - method: "acknowledgment"
+        description: "Policy acknowledgment required"
+        tracking: "lms_system"
+      
+      - method: "updates"
+        description: "Policy update notifications"
+        channels: ["email", "slack", "intranet"]
+  
+  versioning:
+    schema: "major.minor"
+    change_types:
+      - type: "major"
+        description: "Significant policy changes"
+        approval: "executive_team"
+        communication: "all_employees"
+      
+      - type: "minor"
+        description: "Minor clarifications or updates"
+        approval: "policy_owner"
+        communication: "affected_roles"
+    
+    retention:
+      current_version: "accessible"
+      previous_versions: "archived_for_3_years"
+```
+
+### Verification Checklist
+
+- [ ] Policies documented
+- [ ] Policies approved
+- [ ] Policies communicated
+- [ ] Acknowledgments tracked
+- [ ] Reviews scheduled
+- [ ] Versions maintained
+
+---
+
+## COMP-006: Training Tracking
+
+### Rule Statement
+
+Compliance training must be assigned, completed, and tracked.
+
+### Training Framework
+
+```yaml
+training_framework:
+  requirements:
+    - role: "all_employees"
+      trainings:
+        - training: "security_awareness"
+          description: "General security awareness"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+        
+        - training: "data_protection"
+          description: "Data protection fundamentals"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+        
+        - training: "acceptable_use"
+          description: "Acceptable use policy"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+    
+    - role: "ml_engineers"
+      trainings:
+        - training: "ai_security"
+          description: "AI-specific security training"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+        
+        - training: "secure_coding"
+          description: "Secure coding practices"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+        
+        - training: "incident_response"
+          description: "Incident response procedures"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+    
+    - role: "data_stewards"
+      trainings:
+        - training: "data_governance"
+          description: "Data governance procedures"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+        
+        - training: "privacy_regulations"
+          description: "Privacy regulation requirements"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+    
+    - role: "security_team"
+      trainings:
+        - training: "advanced_security"
+          description: "Advanced security techniques"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+        
+        - training: "incident_handling"
+          description: "Incident handling procedures"
+          frequency: "annually"
+          deadline: "onboarding_plus_30_days"
+  
+  tracking:
+    system: "learning_management_system"
+    fields:
+      - "employee_id"
+      - "training_id"
+      - "assignment_date"
+      - "completion_date"
+      - "score"
+      - "status"
+      - "next_due_date"
+    
+    reporting:
+      frequency: "monthly"
+      distribution: ["hr_team", "compliance_team", "management"]
+      metrics:
+        - "completion_rate"
+        - "overdue_count"
+        - "average_score"
+        - "by_department"
+        - "by_role"
+    
+    reminders:
+      - timing: "30_days_before_deadline"
+        channel: "email"
+        recipient: "employee"
+      
+      - timing: "7_days_before_deadline"
+        channel: "email"
+        recipient: "employee"
+        manager: true
+      
+      - timing: "on_deadline"
+        channel: "email"
+        recipient: "employee"
+        manager: true
+        hr: true
+      
+      - timing: "7_days_after_deadline"
+        channel: "email"
+        recipient: "employee"
+        manager: true
+        hr: true
+        compliance: true
+  
+  effectiveness:
+    measurement:
+      - method: "assessment_scores"
+        target: "> 80%"
+        frequency: "per_training"
+      
+      - method: "behavioral_observations"
+        target: "improvement"
+        frequency: "quarterly"
+      
+      - method: "incident_analysis"
+        target: "decrease"
+        frequency: "monthly"
+    
+    improvement:
+      process:
+        - "Analyze training effectiveness"
+        - "Identify improvement opportunities"
+        - "Update training content"
+        - "Retrain if needed"
+      frequency: "annually"
+```
+
+### Verification Checklist
+
+- [ ] Training requirements defined
+- [ ] Training assignments tracked
+- [ ] Completion monitored
+- [ ] Reminders configured
+- [ ] Reporting configured
+- [ ] Effectiveness measured
+
+---
+
+## COMP-007: Vendor Management
+
+### Rule Statement
+
+Third-party vendors must be assessed for compliance and monitored throughout the relationship.
+
+### Vendor Management Framework
+
+```yaml
+vendor_management:
+  vendors:
+    - vendor_id: "VENDOR-001"
+      name: "OpenAI"
+      service: "LLM API"
+      category: "model_provider"
+      status: "active"
+      
+      assessment:
+        date: "2026-01-15"
+        assessor: "Security Team"
+        result: "approved"
+        risk_level: "medium"
+        
+        security:
+          - "SOC 2 Type II certified"
+          - "Encryption at rest and in transit"
+          - "Access controls implemented"
+          - "Incident response procedures"
+        
+        compliance:
+          - "GDPR compliant"
+          - "CCPA compliant"
+          - "Data processing agreement executed"
+        
+        contract:
+          - "SLA: 99.9% uptime"
+          - "Data retention: 30 days"
+          - "Data deletion: on request"
+          - "Incident notification: 24 hours"
+      
+      monitoring:
+        frequency: "quarterly"
+        metrics:
+          - "uptime"
+          - "latency"
+          - "error_rate"
+          - "security_incidents"
+        last_reviewed: "2026-04-01"
+        next_review: "2026-07-01"
+      
+      documentation:
+        - "DPA"
+        - "SLA"
+        - "SOC 2 report"
+        - "Assessment report"
+        - "Contract"
+    
+    - vendor_id: "VENDOR-002"
+      name: "Pinecone"
+      service: "Vector database"
+      category: "data_store"
+      status: "active"
+      
+      assessment:
+        date: "2026-01-20"
+        assessor: "Security Team"
+        result: "approved"
+        risk_level: "low"
+        
+        security:
+          - "SOC 2 Type II certified"
+          - "Encryption at rest and in transit"
+          - "Access controls implemented"
+        
+        compliance:
+          - "GDPR compliant"
+          - "DPA executed"
+        
+        contract:
+          - "SLA: 99.95% uptime"
+          - "Data deletion: on request"
+      
+      monitoring:
+        frequency: "quarterly"
+        metrics:
+          - "uptime"
+          - "latency"
+          - "error_rate"
+        last_reviewed: "2026-04-01"
+        next_review: "2026-07-01"
+      
+      documentation:
+        - "DPA"
+        - "SLA"
+        - "SOC 2 report"
+        - "Contract"
+  
+  assessment_process:
+    - step: "identify_vendor"
+      description: "Identify vendor and service"
+      required_fields:
+        - "vendor_name"
+        - "service_description"
+        - "data_access"
+        - "criticality"
+    
+    - step: "risk_assessment"
+      description: "Assess vendor risk"
+      criteria:
+        - "Data access level"
+        - "Service criticality"
+        - "Regulatory requirements"
+        - "Security posture"
+      risk_levels: ["low", "medium", "high", "critical"]
+    
+    - step: "security_review"
+      description: "Review vendor security"
+      requirements:
+        - "Security certifications"
+        - "Security practices"
+        - "Incident response"
+        - "Business continuity"
+    
+    - step: "compliance_review"
+      description: "Review vendor compliance"
+      requirements:
+        - "Regulatory compliance"
+        - "DPA execution"
+        - "Audit rights"
+        - "Breach notification"
+    
+    - step: "contract_review"
+      description: "Review contract terms"
+      requirements:
+        - "SLA terms"
+        - "Data handling"
+        - "Security requirements"
+        - "Compliance requirements"
+        - "Termination terms"
+    
+    - step: "approval"
+      description: "Approve vendor engagement"
+      approver: "compliance_officer" (low/medium) or "ciso" (high/critical)
+    
+    - step: "onboarding"
+      description: "Onboard vendor"
+      activities:
+        - "Execute agreements"
+        - "Configure access"
+        - "Set up monitoring"
+        - "Document in register"
+  
+  monitoring:
+    frequency:
+      low_risk: "annually"
+      medium_risk: "quarterly"
+      high_risk: "monthly"
+      critical_risk: "continuous"
+    
+    metrics:
+      - "uptime"
+      - "performance"
+      - "security_incidents"
+      - "compliance_status"
+      - "SLA_compliance"
+    
+    alerts:
+      - condition: "security_incident"
+        severity: "critical"
+        action: "immediate_review"
+      - condition: "SLA_breach"
+        severity: "high"
+        action: "review_within_24_hours"
+      - condition: "compliance_issue"
+        severity: "high"
+        action: "review_within_24_hours"
+  
+  exit_strategy:
+    requirements:
+      - "Data export capability"
+      - "Data deletion verification"
+      - "Service transition plan"
+      - "Knowledge transfer"
+      - "Contract termination"
+```
+
+### Verification Checklist
+
+- [ ] Vendor register maintained
+- [ ] Assessments completed
+- [ ] Contracts reviewed
+- [ ] Monitoring configured
+- [ ] Documentation maintained
+- [ ] Exit strategies defined
+
+---
+
+## COMP-008: Regulatory Monitoring
+
+### Rule Statement
+
+Regulatory changes must be monitored and their impact assessed.
+
+### Regulatory Monitoring Framework
+
+```yaml
+regulatory_monitoring:
+  sources:
+    - source: "gdpr"
+      name: "GDPR Enforcement Tracker"
+      url: "https://gdpr.euforcement tracker.com"
+      frequency: "weekly"
+      responsible: "DPO"
+    
+    - source: "eu_ai_act"
+      name: "EU AI Act Updates"
+      url: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      frequency: "weekly"
+      responsible: "Compliance Team"
+    
+    - source: "ccpa"
+      name: "CCPA/CPRA Updates"
+      url: "https://oag.ca.gov/privacy/ccpa"
+      frequency: "monthly"
+      responsible: "Legal Team"
+    
+    - source: "soc2"
+      name: "SOC 2 Updates"
+      url: "https://www.aicpa.org/focus/auditassurance/soc2"
+      frequency: "quarterly"
+      responsible: "Compliance Team"
+    
+    - source: "industry_news"
+      name: "Industry Regulatory News"
+      sources: ["法律新闻", "安全新闻", "AI新闻"]
+      frequency: "daily"
+      responsible: "Compliance Team"
+  
+  assessment_process:
+    - step: "identify_change"
+      description: "Identify relevant regulatory change"
+      triggers:
+        - "New regulation published"
+        - "Existing regulation amended"
+        - "Enforcement action announced"
+        - "Guidance document issued"
+    
+    - step: "assess_impact"
+      description: "Assess impact on AI systems"
+      criteria:
+        - "Applicability to our systems"
+        - "Compliance gap analysis"
+        - "Implementation timeline"
+        - "Resource requirements"
+        - "Risk of non-compliance"
+    
+    - step: "plan_response"
+      description: "Plan compliance response"
+      activities:
+        - "Update policies and procedures"
+        - "Implement technical controls"
+        - "Train affected personnel"
+        - "Update documentation"
+        - "Conduct testing"
+    
+    - step: "implement_changes"
+      description: "Implement required changes"
+      tracking: "project_management_tool"
+      approval: "compliance_officer"
+    
+    - step: "verify_compliance"
+      description: "Verify compliance with new requirements"
+      methods:
+        - "Control testing"
+        - "Documentation review"
+        - "Audit"
+    
+    - step: "document_response"
+      description: "Document regulatory response"
+      artifacts:
+        - "Impact assessment"
+        - "Response plan"
+        - "Implementation evidence"
+        - "Verification results"
+  
+  reporting:
+    frequency: "monthly"
+    distribution: ["compliance_team", "legal_team", "management"]
+    content:
+      - "Regulatory changes identified"
+      - "Impact assessments completed"
+      - "Response plans in progress"
+      - "Compliance status update"
+      - "Upcoming deadlines"
+  
+  calendar:
+    events:
+      - event: "GDPR annual review"
+        date: "annually"
+        responsible: "DPO"
+      
+      - event: "SOC 2 audit"
+        date: "annually"
+        responsible: "Compliance Team"
+      
+      - event: "EU AI Act compliance deadline"
+        date: "2026-08-01"
+        responsible: "Compliance Team"
+      
+      - event: "Training renewal"
+        date: "annually"
+        responsible: "HR"
+```
+
+### Verification Checklist
+
+- [ ] Monitoring sources identified
+- [ ] Assessment process defined
+- [ ] Response process defined
+- [ ] Reporting configured
+- [ ] Calendar maintained
+- [ ] Reviews scheduled
